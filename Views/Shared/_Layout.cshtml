@@ -1,6 +1,7 @@
 ﻿@using YemekSiparisWeb.Utility
 @using Microsoft.AspNetCore.Http
 @inject IHttpContextAccessor HttpContextAccessor
+@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer localizer
 <!DOCTYPE html>
 <!--facebook ve google hesabıyla login icin nugetten aspcore.authentication.facebook ve authentication.google yukledik.-->
 <!--https://developers.facebook.com/ adresinden get startedtan spice adında app olusturduk.bize app id veriyor.daah sonra startupa ekliyoruz.-->
@@ -40,12 +41,12 @@
                                    aria-expanded="false">
                                     Content Management
                                 </a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropDownMenuLink">
-                                    <a class="dropdown-item" asp-action="Index" asp-controller="Category" asp-area="Admin">Category</a>
-                                    <a class="dropdown-item" asp-action="Index" asp-controller="SubCategory" asp-area="Admin">Sub Category</a>
-                                    <a class="dropdown-item" asp-action="Index" asp-controller="MenuItem" asp-area="Admin">MenuItem</a>
-                                    <a class="dropdown-item" asp-action="Index" asp-controller="Coupon" asp-area="Admin">Coupons</a>
-                                    <a class="dropdown-item" asp-action="Index" asp-controller="User" asp-area="Admin">Users</a>
+                                 <div class="dropdown-menu" aria-labelledby="navbarDropDownMenuLink">
+                                    <a class="dropdown-item" asp-action="Index" asp-controller="Category" asp-area="Admin">@localizer["Category"]</a>
+                                    <a class="dropdown-item" asp-action="Index" asp-controller="SubCategory" asp-area="Admin">@localizer["Sub Category"]</a>
+                                    <a class="dropdown-item" asp-action="Index" asp-controller="MenuItem" asp-area="Admin">@localizer["MenuItem"]</a>
+                                    <a class="dropdown-item" asp-action="Index" asp-controller="Coupon" asp-area="Admin">@localizer["Coupons"]</a>
+                                    <a class="dropdown-item" asp-action="Index" asp-controller="User" asp-area="Admin">@localizer["Users"]</a>
                                 </div>
                             </li>
                         }
@@ -54,7 +55,7 @@
                         {
                             <li class="nav-item">
                                 <a asp-area="Customer" asp-controller="Order" asp-action="OrderHistory" class="nav-link">
-                                    Order History
+                                     @localizer["Order History"]
                                 </a>
                             </li>
                         }
@@ -70,11 +71,11 @@
                                 <div class="dropdown-menu" aria-labelledby="navbarDropDownMenuLink">
                                     @if (User.IsInRole(SD.KitchenUser) || User.IsInRole(SD.ManagerUser))
                                     {
-                                        <a class="dropdown-item" asp-action="ManageOrder" asp-controller="Order" asp-area="Customer">Manage Order</a>
+                                        <a class="dropdown-item" asp-action="ManageOrder" asp-controller="Order" asp-area="Customer">@localizer["Manage Order"]</a>
                                     }
                                     @if (User.IsInRole(SD.FrontDeskUser) || User.IsInRole(SD.ManagerUser))
                                     {
-                                        <a class="dropdown-item" asp-action="OrderPickup" asp-controller="Order" asp-area="Customer">Order Pickup</a>
+                                        <a class="dropdown-item" asp-action="OrderPickup" asp-controller="Order" asp-area="Customer">@localizer["Order Pickup"]</a>
                                     }
                                 </div>
                             </li>
