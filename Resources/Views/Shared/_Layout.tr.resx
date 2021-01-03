@@ -153,4 +153,8 @@
     <value>Sipariş Seç</value>
     <comment/>
   </data>
+  <data name="Content Management" xml:space="preserve">
+    <value>İçerik Yönetimi</value>
+    <comment/>
+  </data>
 </root>

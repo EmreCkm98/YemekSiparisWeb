@@ -153,4 +153,8 @@
     <value>Order Pickup</value>
     <comment/>
   </data>
+  <data name="İçerik Yönetimi" xml:space="preserve">
+    <value>Content Management</value>
+    <comment/>
+  </data>
 </root>
