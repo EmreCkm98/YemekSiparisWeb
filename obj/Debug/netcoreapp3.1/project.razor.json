@@ -14495,6 +14495,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\emre\\source\\repos\\YemekSiparisWebOdev\\Views\\Shared\\_Culture.cshtml",
+      "TargetPath": "Views\\Shared\\_Culture.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\emre\\source\\repos\\YemekSiparisWebOdev\\Areas\\Customer\\Views\\Order\\Confirm.cshtml",
       "TargetPath": "Areas\\Customer\\Views\\Order\\Confirm.cshtml",
       "FileKind": "mvc"
