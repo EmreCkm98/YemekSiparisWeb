@@ -6,6 +6,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
@@ -47,7 +48,15 @@ namespace YemekSiparisWeb.Controllers
 
             return View(IndexVM);
         }
-        
+         [HttpPost]
+        public IActionResult CultureManagement(string culture)
+        {
+            Response.Cookies.Append(CookieRequestCultureProvider.DefaultCookieName, CookieRequestCultureProvider.MakeCookieValue(new RequestCulture(culture)),
+                new CookieOptions { Expires = DateTimeOffset.Now.AddDays(30) }
+                );
+            return RedirectToAction("Index");
+        }
+
         [Authorize]
         public async Task<IActionResult> Details(int id)
         {
